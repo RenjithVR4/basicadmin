@@ -11,7 +11,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Admin Login | Amthar</title>
+<title>Admin Login | Basic Admin</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -27,7 +27,7 @@
 </head>
 <body class="loginbody">
 	<div class="login">
-		<h1><a href="index.html">AMTHAR</a></h1>
+		<h1><a href="index.html">Basic Admin</a></h1>
 		<div class="login-bottom">
 			<h2>Admin Login</h2>
 			<form id="loginform">

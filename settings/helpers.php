@@ -1,12 +1,11 @@
 <?php
 error_reporting(E_ALL);
 
-define('ADMIN_SESSION_ID', 'AMTHARADMINid');
+define('ADMIN_SESSION_ID', 'BASICADMINid');
 
 
 function DBConnection()
 {
-	//Now create db connection
 	$mysqlcon = new mysqli('localhost', 'root', 'root','amthar');
 
 	if ($mysqlcon->connect_errno)

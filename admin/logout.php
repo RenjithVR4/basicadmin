@@ -47,6 +47,6 @@ if($adminid)
      print json_encode(array('success'=>$adminid));
 }
 
-error_log("Amthar Admin Logout - ".$adminid);
+error_log("Basic Admin Logout - ".$adminid);
 exit(0);
 ?>
