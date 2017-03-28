@@ -9,5 +9,5 @@
  ?>
  <!--Footer js-->
  <div class="copy">
-         <p> &copy; <?php echo date("Y"); ?> AMTHAR. All Rights Reserved | Developed by <a href="http://www.renjithvr.in">RVR</a> </p>
+         <p> &copy; <?php echo date("Y"); ?> Basic Admin. All Rights Reserved | Developed by <a href="http://www.renjithvr.in">RVR</a> </p>
  </div>

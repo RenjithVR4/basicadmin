@@ -18,7 +18,7 @@
                                          <span class="icon-bar"></span>
                                          <span class="icon-bar"></span>
                                  </button>
-                                 <h1> <a class="navbar-brand" href="index.php">Amthar</a></h1>
+                                 <h1> <a class="navbar-brand" href="index.php">Basic Admin</a></h1>
                          </div>
                          <div class=" border-bottom">
                                  <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pull-right" style="margin-top:10px;">
