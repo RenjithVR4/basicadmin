@@ -42,14 +42,14 @@ function adminLogout()
         showLoadingDiv("body");
         $.ajax({
                 type:"GET",
-                url:thispath+"./admin/logout.php",
+                url:thispath+"/basicadmin/admin/logout.php",
                 success:function(data)
                 {
-                        window.location=thispath+'/login.php';
+                        window.location=thispath+'/basicadmin/login.php';
                 },
                 error:function(data)
                 {
-                        window.location=thispath+'/login.php';
+                        window.location=thispath+'/basicadmin/login.php';
                 }
 
         });
