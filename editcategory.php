@@ -6,10 +6,10 @@
    FileName: 	login.php
    Description:	Add Category
 **********************************************************/
-include_once("header.php");
+include_once("common/header.php");
  ?>
 </head>
-<?php include_once("menu.php"); ?>
+<?php include_once("common/menu.php"); ?>
         <div id="page-wrapper" class="gray-bg dashbard-1">
                 <div class="content-main">
   		<!--banner-->
@@ -52,17 +52,13 @@ include_once("header.php");
                         </div>
                 </div>
         </div>
-<?php include_once("footer.php"); ?>
-<!--scrolling js-->
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
-	<!--//scrolling js-->
-	<script src="js/bootstrap.min.js"> </script>
-        <script src="js/settings/helpers.js"> </script>
-        <script src="js/settings/editcategory.js"> </script>
-        <script type="text/javascript">
-          var id = "<?php echo $_GET['categoryid']?>";
-          editcategory.init(id);
-        </script>
+<?php include_once("common/footer.php"); ?>
+<!-- Common JS files-->
+<?php include_once("common/commonjs.php"); ?>
+<script src="js/settings/editcategory.js"> </script>
+<script type="text/javascript">
+  var id = "<?php echo $_GET['categoryid']?>";
+  editcategory.init(id);
+</script>
 </body>
 </html>

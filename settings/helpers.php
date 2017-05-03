@@ -6,7 +6,7 @@ define('ADMIN_SESSION_ID', 'BASICADMINid');
 
 function DBConnection()
 {
-	$mysqlcon = new mysqli('localhost', 'root', 'root','amthar');
+	$mysqlcon = new mysqli('localhost', 'root', 'root','basicadmin');
 
 	if ($mysqlcon->connect_errno)
 	{
@@ -53,6 +53,52 @@ function sessionValidate($roleid,$id=NULL)
 
 	return $id;
 }
+
+function getBrowser()
+{
+
+
+	  $browser = "";
+
+	  if(strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== FALSE)
+	  {
+	    $browser = 'Internet explorer';
+	  }
+	  elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Trident') !== FALSE) //For Supporting IE 11
+	  {
+	    $browser =  'Internet explorer';
+	  }
+	  elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Firefox') !== FALSE)
+	  {
+	    $browser = 'Mozilla Firefox';
+	  }
+	  elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Chrome') !== FALSE)
+	  {
+	    $browser =  'Google Chrome';
+	  }
+	  elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera Mini') !== FALSE)
+	  {
+	    $browser =  "Opera Mini";
+	  }
+	  elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Opera') !== FALSE)
+	  {
+	   $browser = "Opera";
+	  }
+	  elseif(strpos($_SERVER['HTTP_USER_AGENT'], 'Safari') !== FALSE)
+	  {
+	   $browser =  "Safari";
+	  }
+	  else
+	  {
+	    $browser =  'UnKnown';
+	  }
+
+	  error_log("Browser ==> " . $browser);
+
+	  return $browser;
+
+}
+
 
 
  ?>

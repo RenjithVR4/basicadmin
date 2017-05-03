@@ -23,13 +23,13 @@ function rest_put($request)
 	if(!($adminid = sessionValidate(ADMIN_SESSION_ID)))
 	{
 		header('HTTP/1.1' .'  '. 401 .'  ' .  'Bad Request');
-        exit("No Valid Admin Session");
+        	exit("No Valid Admin Session");
 	}
 
 	if(!is_numeric($id))
 	{
 		header('HTTP/1.1' .'  '. 400 .'  ' .  'Bad Request');
-        exit("Subcategory ID is not valid");
+        	exit("Subcategory ID is not valid");
 	}
 
 	$put_vars = json_decode(file_get_contents('php://input'), true);
@@ -39,7 +39,7 @@ function rest_put($request)
 	if(empty($put_vars))
 	{
 		header('HTTP/1.1' .'  '. 400 .'  ' .  'Bad Request');
-        exit("Missing Parameters");
+        	exit("Missing Parameters");
 	}
 
 	$result = updateSubcategory($id, $put_vars);
@@ -47,7 +47,7 @@ function rest_put($request)
 	if(isset($result['error']) && $result['error'] === 'EMPTY')
 	{
 		header('HTTP/1.1' .'  '. 400 .'  ' .  'Bad Request');
-        exit("Error while updating category");
+        	exit("Error while updating category");
 	}
 
 	print json_encode($result);
@@ -146,28 +146,28 @@ function rest_get($request)
 function rest_delete($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 function rest_head($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 function rest_options($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 function rest_error($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
-//First check what is the method
+//Checking the method
 if(!isset($_SERVER['REQUEST_METHOD']) || !isset($_SERVER['REQUEST_URI']))
 {
     header('HTTP/1.1' .'  '. 400 .'  ' .  'Bad Request');

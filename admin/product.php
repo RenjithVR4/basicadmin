@@ -108,7 +108,7 @@ function rest_get($request)
 	if(!($adminid = sessionValidate(ADMIN_SESSION_ID)))
 	{
 		header('HTTP/1.1' .'  '. 401 .'  ' .  'Bad Request');
-        exit("No Valid Admin Session");
+        	exit("No Valid Admin Session");
 	}
 
 	if($id === "products")

@@ -6,21 +6,34 @@
    FileName: 	login.php
    Description:	Admin Dashboard page
 **********************************************************/
-include_once("header.php");
+include_once("common/header.php");
 
 $user_ip = getenv('REMOTE_ADDR');
 $geo = unserialize(file_get_contents("http://www.geoplugin.net/php.gp?ip=$user_ip"));
-$browser = $_SERVER['HTTP_USER_AGENT'];
 $city = $geo["geoplugin_city"];
 $region = $geo["geoplugin_regionName"];
 $country = $geo["geoplugin_countryName"];
 
+if(strlen($city) == 0)
+{
+    $city = "Local Host";
+}
+
+if(strlen($region) == 0)
+{
+    $region = "Local Host";
+}
+
+if(strlen($country) == 0)
+{
+    $country = "Local Host";
+}
 error_log(json_encode($geo));
 
  ?>
 <link rel="stylesheet" href="css/clndr.css" type="text/css" />
 </head>
-<?php include_once("menu.php"); ?>
+<?php include_once("common/menu.php"); ?>
         <div id="page-wrapper" class="gray-bg dashbard-1">
                 <div class="content-main">
   		<!--banner-->
@@ -50,7 +63,7 @@ error_log(json_encode($geo));
         				</div>
 
         				<div class="content-top-1">
-        					<h4>SubCategories</h4>
+        					<h4>Subcategories</h4>
         					<div class="clearfix" style="margin-bottom:1em;"> </div>
         					<div class="col-md-6 top-content">
         						<h5>Total</h5>
@@ -91,7 +104,7 @@ error_log(json_encode($geo));
                                         <hr>
                                                 <p><b>IP:</b> <?php echo $user_ip; ?></p>
                                                 <br>
-                                                <p><b>Browser:</b> <?php echo $browser; ?></p>
+                                                <p><b>Browser:</b><span class="browser"> </span></p>
                                                 <br>
                                                 <p><b>City:</b> <?php echo $city; ?></p>
                                                 <br>
@@ -101,22 +114,22 @@ error_log(json_encode($geo));
                                         </div>
                                 </div>
                                 <div class="clearfix"> </div></div>
-                                <div class="col-md-12 mid-content-top">
+                                <div class="col-md-6 mid-content-top">
                                         <div class="middle-content">
-                                                <div class="categorylist col-md-6">
+                                                <div class="categorylist">
                                                         <h3>Last added categories</h3>
                                                         <hr>
                                                         <ul> </ul>
                                                 </div>
                                                 <div class="clearfix"> </div>
-                                                <div class="subcategorylist col-md-6">
+                                                <div class="subcategorylist">
                                                         <label></label>
                                                         <h3>Last added subcategories</h3>
                                                         <hr>
                                                         <ul> </ul>
                                                 </div>
                                                 <div class="clearfix"> </div>
-                                                <div class="productlist col-md-6">
+                                                <div class="productlist">
                                                         <label></label>
                                                         <h3>Last added products</h3>
                                                         <hr>
@@ -132,19 +145,16 @@ error_log(json_encode($geo));
                         <div class="clearfix"> </div>
                 </div>
         </div>
-        <!--Footer-->
-        <?php include_once("footer.php"); ?>
-<!---->
-<script src="js/underscore-min.js" type="text/javascript"></script>
-<script src= "js/moment-2.2.1.js" type="text/javascript"></script>
-<script src="js/clndr.js" type="text/javascript"></script>
-<script src="js/site.js" type="text/javascript"></script>
 
-<script src="js/jquery.nicescroll.js"></script>
-<script src="js/scripts.js"></script>
-<!--//scrolling js-->
-<script src="js/bootstrap.min.js"> </script>
-<script src="js/settings/helpers.js"> </script>
+<!-- Calender-->
+<script src="js/plugins/underscore-min.js" type="text/javascript"></script>
+<script src="js/plugins/moment.js" type="text/javascript"></script>
+<script src="js/plugins/clndr.js" type="text/javascript"></script>
+<script src="js/plugins/site.js" type="text/javascript"></script>
+
+<?php include_once("common/footer.php"); ?>
+<!-- Common JS files-->
+<?php include_once("common/commonjs.php"); ?>
 <script src="js/settings/dashboard.js"> </script>
 </body>
 </html>

@@ -9,6 +9,7 @@ var dashboard={
 		this.lastAddedcategories();
 		this.lastAddedsubcategories();
 		this.lastAddedproducts();
+		this.getBrowser();
 	},
 	getCategoriescount:function(){
 		var _this=this;
@@ -25,13 +26,14 @@ var dashboard={
 				}
 				else
 				{
-					//error
+					$("#categories").append("Count data Error");
 				}
 
 			},
 			error:function(data){
 				stopLoadingDiv(".container");
-				//error
+				$("#categories").append("Found an unknown Error");
+				console.log(data);
 			}
 		});
 	},
@@ -50,13 +52,14 @@ var dashboard={
 				}
 				else
 				{
-					//error
+					$("#activecategories").append("Count data Error");
 				}
 
 			},
 			error:function(data){
 				stopLoadingDiv(".container");
-				//error
+				$("#activecategories").append("Found an unknown Error");
+				console.log(data);
 			}
 		});
 	},
@@ -76,13 +79,13 @@ var dashboard={
 				}
 				else
 				{
-					//error
+					$("#activesubcategories").append("Count data Error");
 				}
 
 			},
 			error:function(data){
 				stopLoadingDiv(".container");
-				//error
+				$("#activesubcategories").append("Found an unknown Error");
 				console.log(data);
 			}
 		});
@@ -103,13 +106,14 @@ var dashboard={
 				}
 				else
 				{
-					//error
+					$("#activesubcategories").append("Count data Error");
 				}
 
 			},
 			error:function(data){
 				stopLoadingDiv(".container");
-				//error
+				$("#activesubcategories").append("Found an unknown Error");
+				console.log(data);
 			}
 		});
 	},
@@ -128,13 +132,14 @@ var dashboard={
 				}
 				else
 				{
-					//error
+					$("#products").append("Count data Error");
 				}
 
 			},
 			error:function(data){
 				stopLoadingDiv(".container");
-				//error
+				$("#products").append("Found an unknown Error");
+				console.log(data);
 			}
 		});
 	},
@@ -146,6 +151,7 @@ var dashboard={
 			url:"./admin/dashboard.php/productsactivecount",
 			dataType: 'json',
 			success:function(data){
+				console.log(data);
 				stopLoadingDiv(".container");
 				if(!data.error)
 				{
@@ -153,13 +159,14 @@ var dashboard={
 				}
 				else
 				{
-					//error
+					$("#activeproducts").append("Count data Error");
 				}
 
 			},
 			error:function(data){
 				stopLoadingDiv(".container");
-				//error
+				$("#activeproducts").append("Found an unknown Error");
+				console.log(data);
 			}
 		});
 	},
@@ -177,7 +184,7 @@ var dashboard={
 				$(".categorylist ul").append("");
                                 for(i in data)
                                 {
-                                    var list = $('<li>' + data[i].title + '</li>');
+                                    var list = $('<li>' + data[i].title + ' <i class="pull-right">' + formatDate(data[i].created, false, false, false) + '</i></li>');
                                     $(".categorylist ul").append(list);
                                 }
 			}
@@ -216,7 +223,7 @@ var dashboard={
 				$(".subcategorylist ul").append("");
                                 for(i in data)
                                 {
-                                    var list = $('<li>' + data[i].title + '</li>');
+                                    var list = $('<li>' + data[i].title + ' <i class="pull-right">' + formatDate(data[i].created, false, false, false) + '</i></li>');
                                     $(".subcategorylist ul").append(list);
                                 }
 			}
@@ -255,7 +262,7 @@ var dashboard={
 				$(".productlist ul").append("");
                                 for(i in data)
                                 {
-                                    var list = $('<li>' + data[i].title + '</li>');
+                                    var list = $('<li>' + data[i].title + ' <i class="pull-right">' + formatDate(data[i].created, false, false, false) + '</i></li>');
                                     $(".productlist ul").append(list);
                                 }
 			}
@@ -279,7 +286,42 @@ var dashboard={
 		}
 	  });
 
-    },
+    	},
+	getBrowser:function(){
+		_this=this;
+		showLoadingDiv(".container");
+		$.ajax({
+		type:"GET",
+		url:"./admin/dashboard.php/browser",
+		success:function(data){
+			stopLoadingDiv(".container");
+			console.log(data);
+			if(!data.error)
+			{
+				$(".browser").append(data);
+			}
+			else
+			{
+				usermessage(data.error,"error");
+			}
+
+		},
+		error:function(data){
+			stopLoadingDiv(".container");
+			if(data.status === 401)
+				{
+					console.log(data.status);
+					usermessage("Session Expired","error");
+					setTimeout(function (){
+					  window.location="index.php";
+				  },1000);
+				}
+			console.log(data);
+		}
+	  });
+
+	},
+
 }
 
 dashboard.init();

@@ -2,7 +2,7 @@
 /*********************************************************
    Author: 	Renjith VR
    Version: 	1.0
-   Date:		04-Jul-2016
+   Date:	04-Jul-2016
    FileName: 	login.php
    Description:	User login page
 **********************************************************/
@@ -20,10 +20,10 @@
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/font-awesome.css" rel="stylesheet">
-<script type="text/javascript" src="js/notifIt.js"></script>
+<script type="text/javascript" src="js/plugins/notifIt.js"></script>
 <link rel="stylesheet" type="text/css" href="css/notifIt.css">
-<script src="js/jquery.min.js"> </script>
-<script src="js/bootstrap.min.js"> </script>
+<script src="js/plugins/jquery.min.js"> </script>
+<script src="js/plugins/bootstrap.min.js"> </script>
 </head>
 <body class="loginbody">
 	<div class="login">
@@ -52,12 +52,9 @@
 			</form>
 		</div>
 	</div>
-		<!---->
-
-<!---->
 <!--scrolling js-->
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
+	<script src="js/plugins/jquery.nicescroll.js"></script>
+	<script src="js/plugins/scripts.js"></script>
 	<!--//scrolling js-->
 	<script src="js/settings/helpers.js"></script>
 	<script src="js/settings/login.js"></script>

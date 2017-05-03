@@ -6,10 +6,10 @@
    FileName: 	addproduct.php
    Description:	Add Product
 **********************************************************/
-include_once("header.php");
+include_once("common/header.php");
  ?>
 </head>
-<?php include_once("menu.php"); ?>
+<?php include_once("common/menu.php"); ?>
         <div id="page-wrapper" class="gray-bg dashbard-1">
                 <div class="content-main">
   		<!--banner-->
@@ -92,14 +92,9 @@ include_once("header.php");
                         </div>
                 </div>
         </div>
-<?php include_once("footer.php"); ?>
-
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
-	<script src="js/bootstrap.min.js"> </script>
-        <script src="js/jquery.tinymce.min.js"> </script>
-        <script src="js/tinymce.min.js"> </script>
-        <script src="js/settings/helpers.js"> </script>
-        <script src="js/settings/addproduct.js"> </script>
+<?php include_once("common/footer.php"); ?>
+<!-- Common JS files-->
+<?php include_once("common/commonjs.php"); ?>
+<script src="js/settings/addproduct.js"> </script>
 </body>
 </html>

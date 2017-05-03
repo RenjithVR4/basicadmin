@@ -39,7 +39,7 @@ function rest_get($request)
 	$title = NULL;
 	$status = NULL;
 	$page = 1;
-        
+
 	switch($id)
         {
 	        case 'categoriescount':
@@ -69,8 +69,12 @@ function rest_get($request)
                 case 'lastthreeproducts':
 	                $result = getlastthreeproducts();
 	                break;
+	        case 'browser':
+	                $result = getBrowser();
+	                break;
 	        default:
-	                $result  = array('error');
+	                header('HTTP/1.1' .'  '. 400 .'  ' .  'Invalid Request');
+                        exit("Invalid Parameter");
 	                break;
 	}
 

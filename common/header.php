@@ -31,13 +31,13 @@ $filename = $paths[count($paths)-1];
         <link href="css/style.css" rel='stylesheet' type='text/css' />
         <link href="css/notifIt.css" rel="stylesheet" type="text/css"  />
         <link href="css/font-awesome.css" rel="stylesheet">
-        <script src="js/notifIt.js"></script>
-        <script src="js/jquery.min.js"> </script>
+        <script src="./js/plugins/notifIt.js"></script>
+        <script src="./js/plugins/jquery.min.js"> </script>
         <!-- Mainly scripts -->
-        <script src="js/jquery.metisMenu.js"></script>
-        <script src="js/jquery.slimscroll.min.js"></script>
+        <script src="./js/plugins/jquery.metisMenu.js"></script>
+        <script src="./js/plugins/jquery.slimscroll.min.js"></script>
         <!-- Custom and plugin javascript -->
-        <script src="js/custom.js"></script>
+        <script src="./js/plugins/custom.js"></script>
         <!-- <script>
         $(function ()
         {

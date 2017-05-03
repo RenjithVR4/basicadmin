@@ -63,3 +63,29 @@ function usermessage(message,type)
                   position: "center"
           });
 }
+
+function formatDate(datetime,yearonly,monthonly,timeonly)
+{
+        var d = new Date(Date.parse(datetime.replace(/-/g, "/")));
+        var month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        var date = d.getDate() + " " + month[d.getMonth()] + ", " + d.getFullYear();
+        var time = d.toLocaleTimeString().toLowerCase().replace(/([\d]+:[\d]+):[\d]+(\s\w+)/g, "$1$2");
+
+        if(monthonly)
+        {
+                return (date.substring(2, 5));
+        }
+        else if(yearonly)
+        {
+                return (date.substring(7, 14));
+        }
+        else if(timeonly)
+        {
+                return (time);
+        }
+        else
+        {
+                return date; 
+        }
+
+}

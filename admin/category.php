@@ -116,25 +116,25 @@ function rest_get($request)
 function rest_delete($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 function rest_head($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 function rest_options($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 function rest_error($request)
 {
 	header('HTTP/1.1' .'  '. 405 .'  ' .  'Bad Request');
-    exit("This method is not allowed");
+    	exit("This method is not allowed");
 }
 
 //First check what is the method

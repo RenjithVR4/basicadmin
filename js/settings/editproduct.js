@@ -1,6 +1,5 @@
 var editproductid={
 	init:function(productid){
-		this.setRichtext();
                 this.getCategories();
                 this.changeEvent();
 		this.getProduct(productid);
@@ -9,16 +8,6 @@ var editproductid={
 		// this.editProduct();
 	},
 	postImage:"",
-	setRichtext()
-	{
-		tinymce.init({
-		  selector: 'textarea.description',
-		  height: 200,
-		  menubar:false,
-		  toolbar: 'undo redo | bold italic | bullist numlist',
-		  plugins:'wordcount'
-		});
-	},
         getCategories(){
                 var _this = this;
 		data = {};

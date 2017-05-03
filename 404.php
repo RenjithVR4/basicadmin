@@ -14,8 +14,8 @@
 <!-- Custom Theme files -->
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <link href="css/font-awesome.css" rel="stylesheet">
-<script src="js/jquery.min.js"> </script>
-<script src="js/bootstrap.min.js"> </script>
+<script src="js/plugins/jquery.min.js"> </script>
+<script src="js/plugins/bootstrap.min.js"> </script>
 </head>
 <body>
 	<div class="content-main">
@@ -27,14 +27,12 @@
 			</div>
 		</div>
 	</div>
-		<!---->
 
 <?php include_once("footer.php"); ?>
 
-<!---->
 <!--scrolling js-->
-	<script src="js/jquery.nicescroll.js"></script>
-	<script src="js/scripts.js"></script>
-	<!--//scrolling js-->
+	<script src="js/plugins/jquery.nicescroll.js"></script>
+	<script src="js/plugins/scripts.js"></script>
+<!--//scrolling js-->
 </body>
 </html>
